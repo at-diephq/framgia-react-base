@@ -1,0 +1,43 @@
+{
+  "presets": [
+    "react",
+    "es2015",
+    "stage-1",
+    "stage-3"
+  ],
+  "env": {
+    "development": {
+      "presets": [
+        "env",
+      "react-hmre"
+      ]
+    },
+    "production": {
+      "presets": [
+        [
+          "env",
+        {
+          "es2015": {
+            "modules": false
+          }
+        }
+        ]
+      ],
+      "plugins": [
+        "transform-react-constant-elements",
+        "transform-react-remove-prop-types"
+      ]
+    },
+    "test": {
+      "plugins": [
+        [
+          "babel-plugin-webpack-loaders",
+          {
+            "config": "${CONFIG}",
+            "verbose": true
+          }
+        ]
+      ]
+    }
+  }
+}
