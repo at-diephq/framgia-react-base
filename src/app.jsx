@@ -2,35 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
-import uuid from 'uuid/v4';
+import { ConnectedRouter, syncHistoryWithStore } from 'react-router-redux';
 
-import createReducer from './setup/reducer';
-import configureStore from './setup/store';
-import routes from './routes';
+import configureStore, { history } from './setup/store';
+import routes from './setup/routes';
 
-const reducer = createReducer();
-const store = configureStore(reducer);
-import 'bootstrap/dist/css/bootstrap.css';
+import App from './components/root/App';
+import Login from './components/pages/Login';
 
-const appContainer = document.getElementById('app');
+const store = configureStore();
+
+const rootNode = document.getElementById('app');
 
 function render() {
   ReactDOM.render((
-    <AppContainer>
-      <Provider store={store}>
-        <Router
-          key={uuid()}
-          routes={routes}
-          history={browserHistory}
-        />
-      </Provider>
-    </AppContainer>
-  ), appContainer);
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <App />
+      </ConnectedRouter>
+    </Provider>
+  ), rootNode);
 }
 
 render();
-
-if (module.hot) {
-  module.hot.accept();
-}

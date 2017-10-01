@@ -1,11 +1,12 @@
-import { combineReducers } from 'redux-immutable';
+import { combineReducers } from 'redux'
+import { routerReducer } from 'react-router-redux';
 
-const reducers = {
-  null: function() { return {}}
-};
+const rootReducer = combineReducers({
+  routing: routerReducer,
+  login: () => ({
+    id: 1,
+    email: 'test@gmail.com'
+  }),
+});
 
-function createReducer() {
-  return combineReducers(reducers);
-}
-
-export default createReducer;
+export default rootReducer;

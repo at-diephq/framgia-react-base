@@ -1,19 +1,33 @@
 import { createStore, applyMiddleware, compose } from 'redux';
+import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import thunk from 'redux-thunk';
-import { Map } from 'immutable';
+import createHistory from 'history/createBrowserHistory';
+import { routerMiddleware } from 'react-router-redux';
 
-/* eslint-disable no-underscore-dangle */
-const composeEnhancers = (!process.env && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ?
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ :
-  compose;
-/* eslint-enable */
+export const history = createHistory();
 
-const configureStore = (reducer) => {
-  const initialState = Map();
-  const middlewares = [thunk];
-  const enhancers = [applyMiddleware(...middlewares)];
+import rootReducer from './reducer';
 
-  return createStore(reducer, initialState, composeEnhancers);
+function configureStore() {
+  const reactRouterMiddleware = routerMiddleware(history);
+
+  const middlewares = [
+    reduxImmutableStateInvariant(),
+    thunk,
+    reactRouterMiddleware,
+  ];
+
+  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  const store = createStore(rootReducer, composeEnhancers(applyMiddleware(...middlewares)));
+
+  // if (module.hot) {
+  //   module.hot.accept('./reducer', () => {
+  //     const nextReducer = rootReducer.default;
+  //     store.replaceReducer(nextReducer);
+  //   });
+  // }
+
+  return store;
 }
 
 export default configureStore;

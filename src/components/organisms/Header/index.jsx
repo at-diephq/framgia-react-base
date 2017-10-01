@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
   return (
@@ -12,13 +13,15 @@ function Header() {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="#">Framgia</a>
+            <NavLink to="/" className="navbar-brand">Framgia</NavLink>
           </div>
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav navbar-right">
-              <li className="active"><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Login</a></li>
+              <li className="active">
+                <NavLink exact to="/">Home</NavLink>
+              </li>
+              <li><NavLink to="/about">About</NavLink></li>
+              <li><NavLink to="/login">Login</NavLink></li>
             </ul>
           </div>
         </div>
