@@ -1,0 +1,15 @@
+/**
+ * Stylesheet importer
+ *
+ * Variables ...... core variables and mixins
+ * Reset .......... css reset
+ * Base ........... foundations (e.g. sanitize.css, resets)
+ * Components ..... designed, complete components
+ * Pages .......... screen detail styles
+ * Vendors ........ external libraries
+ */
+
+ /**
+ * Components
+ */
+@import './components/nav.scss';

@@ -7,6 +7,7 @@ import LoginPage from './../../pages/Login';
 import AboutPage from './../../pages/About';
 
 import 'bootstrap/dist/css/bootstrap.css';
+import './../../../styles/app.scss';
 
 function App() {
   return (

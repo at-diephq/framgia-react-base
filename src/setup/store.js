@@ -6,7 +6,7 @@ import { routerMiddleware } from 'react-router-redux';
 
 export const history = createHistory();
 
-import rootReducer from './reducer';
+import rootReducer from './../reducers';
 
 function configureStore() {
   const reactRouterMiddleware = routerMiddleware(history);

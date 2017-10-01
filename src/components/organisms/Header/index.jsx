@@ -17,11 +17,9 @@ function Header() {
           </div>
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav navbar-right">
-              <li className="active">
-                <NavLink exact to="/">Home</NavLink>
-              </li>
-              <li><NavLink to="/about">About</NavLink></li>
-              <li><NavLink to="/login">Login</NavLink></li>
+              <li><NavLink exact to="/" activeClassName="active">Home</NavLink></li>
+              <li><NavLink to="/about" activeClassName="active">About</NavLink></li>
+              <li><NavLink to="/login" activeClassName="active">Login</NavLink></li>
             </ul>
           </div>
         </div>

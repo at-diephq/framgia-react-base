@@ -5,11 +5,7 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter, syncHistoryWithStore } from 'react-router-redux';
 
 import configureStore, { history } from './setup/store';
-import routes from './setup/routes';
-
 import App from './components/root/App';
-import Login from './components/pages/Login';
-
 const store = configureStore();
 
 const rootNode = document.getElementById('app');
