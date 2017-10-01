@@ -1,4 +1,4 @@
-# React Atomic Design
+# Framgia Base React
 
 ## Install
 

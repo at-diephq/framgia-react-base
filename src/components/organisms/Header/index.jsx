@@ -9,9 +9,9 @@ function Header() {
           <div className="navbar-header">
             <button type="button" className="navbar-toggle collapsed">
               <span className="sr-only">Toggle</span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
+              <span className="icon-bar" />
+              <span className="icon-bar" />
+              <span className="icon-bar" />
             </button>
             <NavLink to="/" className="navbar-brand">Framgia</NavLink>
           </div>

@@ -20,8 +20,8 @@ function Login() {
         <div className="form-group">
           <div className="col-sm-offset-2 col-sm-10">
             <div className="checkbox">
-              <label>
-                <input type="checkbox" /> Remember me
+              <label htmlFor="remember">
+                <input type="checkbox" id="remember" /> Remember me
               </label>
             </div>
           </div>
