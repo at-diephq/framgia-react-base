@@ -5,22 +5,28 @@
     "stage-1",
     "stage-3"
   ],
+  "plugins": [
+    "syntax-dynamic-import"
+  ],
   "env": {
     "development": {
       "presets": [
         "env",
-      "react-hmre"
+        "react-hmre"
+      ],
+      "plugins": [
+        "react-hot-loader/babel"
       ]
     },
     "production": {
       "presets": [
         [
           "env",
-        {
-          "es2015": {
-            "modules": false
+          {
+            "es2015": {
+              "modules": false
+            }
           }
-        }
         ]
       ],
       "plugins": [
