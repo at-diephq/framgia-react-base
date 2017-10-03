@@ -33,6 +33,11 @@ function Header() {
                 </NavLink>
               </li>
               <li>
+                <NavLink to="/posts" activeClassName="active">
+                  Posts
+                </NavLink>
+              </li>
+              <li>
                 <NavLink to="/login" activeClassName="active">
                   Login
                 </NavLink>
