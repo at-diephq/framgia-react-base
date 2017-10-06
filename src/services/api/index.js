@@ -8,7 +8,7 @@ class HttpRequest {
       baseURL: API_BASE,
       timeout: 3000,
       headers,
-      ...options,
+      ...options
     });
     this.catchError = this.catchError.bind(this);
   }
@@ -38,24 +38,37 @@ class HttpRequest {
   }
 }
 
-export const AuthenticatedRequest = (getState, options = {}) => new HttpRequest({
-  Accept: 'application/json',
-  'Content-Type': 'application/json',
-  'X-Auth-Token': `${ACCESSTOKEN_VALUE_PREFIX} ${getState().auth.token}`,
-}, options);
+export const AuthenticatedRequest = (getState, options = {}) =>
+  new HttpRequest(
+    {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      'X-Auth-Token': `${ACCESSTOKEN_VALUE_PREFIX} ${getState().auth.token}`
+    },
+    options
+  );
 
-export const UnauthenticatedRequest = () => new HttpRequest({
-  Accept: 'application/json',
-  'Content-Type': 'application/json',
-});
+export const UnauthenticatedRequest = () =>
+  new HttpRequest({
+    Accept: 'application/json',
+    'Content-Type': 'application/json'
+  });
 
-export const AuthenticatedFormDataRequest = (getState, options = {}) => new HttpRequest({
-  Accept: 'application/json',
-  'Content-Type': 'multipart/form-data',
-  'X-Auth-Token': `${ACCESSTOKEN_VALUE_PREFIX} ${getState().auth.token}`,
-}, options);
+export const AuthenticatedFormDataRequest = (getState, options = {}) =>
+  new HttpRequest(
+    {
+      Accept: 'application/json',
+      'Content-Type': 'multipart/form-data',
+      'X-Auth-Token': `${ACCESSTOKEN_VALUE_PREFIX} ${getState().auth.token}`
+    },
+    options
+  );
 
-export const UnauthenticatedFormDataRequest = (options = {}) => new HttpRequest({
-  Accept: 'application/json',
-  'Content-Type': 'multipart/form-data',
-}, options);
+export const UnauthenticatedFormDataRequest = (options = {}) =>
+  new HttpRequest(
+    {
+      Accept: 'application/json',
+      'Content-Type': 'multipart/form-data'
+    },
+    options
+  );

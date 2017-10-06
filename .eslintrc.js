@@ -3,7 +3,8 @@ module.exports = {
   "extends": "airbnb",
   "plugins": [
     "react",
-    "jsx-a11y"
+    "jsx-a11y",
+    "prettier"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
@@ -50,6 +51,8 @@ module.exports = {
     "react/forbid-prop-types": 0,
     "no-shadow": 0,
     "class-methods-use-this": 0,
+    "comma-dangle": ["error", {"functions": "ignore"}],
+    "prettier/prettier": ["error", { "singleQuote": true }]
   },
   "settings": {
     "import/resolver": {

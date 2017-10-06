@@ -14,15 +14,16 @@ const store = configureStore();
 const rootNode = document.getElementById('app');
 
 function render(RootApp = App) {
-  ReactDOM.render((
+  ReactDOM.render(
     <AppContainer>
       <Provider store={store}>
         <ConnectedRouter history={history}>
           <RootApp />
         </ConnectedRouter>
       </Provider>
-    </AppContainer>
-  ), rootNode);
+    </AppContainer>,
+    rootNode
+  );
 }
 
 render();
