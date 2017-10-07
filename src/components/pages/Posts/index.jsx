@@ -23,7 +23,6 @@ class PostListContainer extends React.Component {
           </thead>
           <PostList posts={this.props.posts} />
         </table>
-            
       </div>
     );
   }
@@ -38,10 +37,8 @@ const mapStateToProps = state => ({
   posts: state.postReducer.posts,
 });
 
-const mapDispatchToProps = dispatch => (
-  {
-    getPostList: () => getPostData(dispatch),
-  }
-);
+const mapDispatchToProps = dispatch => ({
+  getPostList: () => getPostData(dispatch),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostListContainer);

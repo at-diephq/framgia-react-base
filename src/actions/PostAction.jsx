@@ -7,12 +7,11 @@ function fetchPostData(data) {
   };
 }
 
-export default function getPostData(dispatch) {
-  UnauthenticatedRequest().get({
+const getPostData = async (dispatch) => {
+  const postPromise = await UnauthenticatedRequest().get({
     url: 'https://jsonplaceholder.typicode.com/posts',
-    params: null,
-    adapter: null,
-  })
-    .then(response => dispatch(fetchPostData(response.data)))
-    .catch(error => console.log(error));
-}
+  });
+  dispatch(fetchPostData(postPromise.data));
+};
+
+export default getPostData;
