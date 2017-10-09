@@ -4,7 +4,7 @@ const inittialState = {
 
 const postReducer = (state = inittialState, action) => {
   switch (action.type) {
-    case 'POST_GET_LIST':
+    case 'FETCH_POST_SUCCESS':
       return {
         posts: action.posts,
       };

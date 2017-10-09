@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import PostList from './PostList';
-import getPostData from './../../../actions/PostAction';
+import fetchPosts from './../../../actions/PostAction';
 
 class PostListContainer extends React.Component {
   componentDidMount() {
@@ -38,7 +38,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getPostList: () => getPostData(dispatch),
+  getPostList: () => fetchPosts(dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostListContainer);

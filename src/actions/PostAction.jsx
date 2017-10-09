@@ -1,17 +1,17 @@
 import { UnauthenticatedRequest } from './../services/api';
 
-function fetchPostData(data) {
+function fetchPostSuccess(posts) {
   return {
-    type: 'POST_GET_LIST',
-    posts: data,
+    type: 'FETCH_POST_SUCCESS',
+    posts,
   };
 }
 
-const getPostData = async (dispatch) => {
-  const postPromise = await UnauthenticatedRequest().get({
+const fetchPosts = async (dispatch) => {
+  const posts = await UnauthenticatedRequest().get({
     url: 'https://jsonplaceholder.typicode.com/posts',
   });
-  dispatch(fetchPostData(postPromise.data));
+  dispatch(fetchPostSuccess(posts.data));
 };
 
-export default getPostData;
+export default fetchPosts;
