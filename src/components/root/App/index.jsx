@@ -8,6 +8,7 @@ import Header from './../../organisms/Header';
 import HomePage from './../../pages/Home';
 import LoginPage from './../../pages/Login';
 import AboutPage from './../../pages/About';
+import PostPage from './../../pages/Posts';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/about" component={AboutPage} />
+          <Route path="/posts" component={PostPage} />
         </Switch>
       </main>
     </div>

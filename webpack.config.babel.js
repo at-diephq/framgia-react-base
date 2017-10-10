@@ -13,6 +13,7 @@ export default {
     historyApiFallback: true,
   },
   entry: [
+    'babel-polyfill',
     'react-hot-loader/patch',
     path.resolve(__dirname, 'src/app.jsx') // Defining path seems necessary for this to work consistently on Windows machines.
   ],
