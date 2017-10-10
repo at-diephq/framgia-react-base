@@ -30,15 +30,15 @@ class PostListContainer extends React.Component {
 
 PostListContainer.propTypes = {
   getPostList: PropTypes.func.isRequired,
-  posts: PropTypes.array.isRequired,
+  posts: PropTypes.array.isRequired
 };
 
 const mapStateToProps = state => ({
-  posts: state.postReducer.posts,
+  posts: state.postReducer.posts
 });
 
 const mapDispatchToProps = dispatch => ({
-  getPostList: () => fetchPosts(dispatch),
+  getPostList: () => fetchPosts(dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostListContainer);

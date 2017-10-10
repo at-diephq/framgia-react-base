@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
     id: 1,
     email: 'test@gmail.com'
   }),
-  postReducer,
+  postReducer
 });
 
 export default rootReducer;

@@ -23,23 +23,13 @@ function Header() {
           >
             <ul className="nav navbar-nav navbar-right">
               <li>
-                <NavLink exact to="/" activeClassName="active">
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/about" activeClassName="active">
-                  About
+                <NavLink to="/login" activeClassName="active">
+                  Login
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/posts" activeClassName="active">
                   Posts
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/login" activeClassName="active">
-                  Login
                 </NavLink>
               </li>
             </ul>

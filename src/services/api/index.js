@@ -6,7 +6,6 @@ class HttpRequest {
   constructor(headers, options) {
     this.axios = axios.create({
       baseURL: API_BASE,
-      timeout: 3000,
       headers,
       ...options
     });

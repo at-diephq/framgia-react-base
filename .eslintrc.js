@@ -47,6 +47,7 @@ module.exports = {
     "no-trailing-spaces": 0,
     "eol-last": 1,
     "no-underscore-dangle": 0,
+    "arrow-parens": 1,
     "no-lone-blocks": 0,
     "react/forbid-prop-types": 0,
     "no-shadow": 0,
